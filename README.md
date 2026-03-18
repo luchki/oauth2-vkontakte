@@ -35,6 +35,8 @@ composer require yasinovsky/oauth2-vkontakte
 
 ## Usage
 
+Create VK application using this [link](https://id.vk.com/about/business/go)
+
 ### Configuration
 
 ```php

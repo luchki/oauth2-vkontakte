@@ -182,5 +182,12 @@ class VkontakteUser implements ResourceOwnerInterface
         return $this->getField('email');
     }
 
+    /**
+     * Returns user's phone number
+     * @return string|null
+     */
+    public function getPhone() {
+        return $this->getField('phone');
+    }
 
 }

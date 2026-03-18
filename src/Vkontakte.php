@@ -10,7 +10,7 @@ use Psr\Http\Message\ResponseInterface;
 class Vkontakte extends AbstractProvider
 {
 
-    const VERSION = '3.0.2';
+    const VERSION = '3.0.3';
 
     protected $baseOAuthUri = 'https://id.vk.com';
     protected $baseUri      = 'https://api.vk.com/method';
@@ -277,17 +277,17 @@ class Vkontakte extends AbstractProvider
             throw new IdentityProviderException($errorMessage, $errorCode, $data);
         }
     }
+
+    /**
+     * @inheritDoc
+     */
     protected function createResourceOwner(array $response, AccessToken $token)
     {
-        $response   = reset($response['response']);
-        $additional = $token->getValues();
-        if (!empty($additional['email'])) {
-            $response['email'] = $additional['email'];
-        }
-        if (!empty($additional['user_id'])) {
-            $response['id'] = $additional['user_id'];
-        }
-
+        $jwt = new IdToken($token);
+        $response = reset($response['response']);
+        if ($id = $jwt->id()) { $response['id'] = $id; }
+        if ($email = $jwt->email()) { $response['email'] = $email; }
+        if ($phone = $jwt->phone()) { $response['phone'] = $phone; }
         return new VkontakteUser($response);
     }
 
