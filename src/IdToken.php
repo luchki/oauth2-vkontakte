@@ -1,11 +1,11 @@
 <?php
 
-namespace Yaseek\OAuth2\Client\Provider;
+namespace Luchki\OAuth2\Client\Provider;
 
 use League\OAuth2\Client\Token\AccessToken;
 
 /**
- * @package Yaseek\OAuth2\Client\Provider
+ * @package Luchki\OAuth2\Client\Provider
  */
 class IdToken {
 

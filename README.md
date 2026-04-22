@@ -30,7 +30,7 @@ We support the following versions of PHP:
 ## Installation
 
 ```sh
-composer require yasinovsky/oauth2-vkontakte
+composer require luchki/oauth2-vkontakte
 ```
 
 ## Usage
@@ -40,7 +40,7 @@ Create VK application using this [link](https://id.vk.com/about/business/go)
 ### Configuration
 
 ```php
-$provider = new Yaseek\OAuth2\Client\Provider\Vkontakte([
+$provider = new Luchki\OAuth2\Client\Provider\Vkontakte([
     'clientId'     => '1234567',
     'clientSecret' => 's0meRe4lLySEcRetC0De',
     'redirectUri'  => 'https://example.org/oauth-endpoint',
@@ -114,15 +114,15 @@ if (!isset($_GET['code'])) {
 
 ### Public
 ```php
-$provider->usersGet([1234, 56789]); // => \Yaseek\OAuth2\Client\Provider\VkontakteUser[]
-$provider->friendsGet(23456);       // => \Yaseek\OAuth2\Client\Provider\VkontakteUser[]
+$provider->usersGet([1234, 56789]); // => \Luchki\OAuth2\Client\Provider\VkontakteUser[]
+$provider->friendsGet(23456);       // => \Luchki\OAuth2\Client\Provider\VkontakteUser[]
 ```
 
 ### With additional data
 ```php
 $providerAccessToken = new \League\OAuth2\Client\Token\AccessToken(['access_token' => 'iAmAccessTokenString']);
-$provider->usersGet([1234, 56789], $providerAccessToken); // => \Yaseek\OAuth2\Client\Provider\VkontakteUser[]
-$provider->friendsGet(23456, $providerAccessToken);       // => \Yaseek\OAuth2\Client\Provider\VkontakteUser[]
+$provider->usersGet([1234, 56789], $providerAccessToken); // => \Luchki\OAuth2\Client\Provider\VkontakteUser[]
+$provider->friendsGet(23456, $providerAccessToken);       // => \Luchki\OAuth2\Client\Provider\VkontakteUser[]
 ```
 
 ## Credits
@@ -130,3 +130,4 @@ $provider->friendsGet(23456, $providerAccessToken);       // => \Yaseek\OAuth2\C
 - [Victor Yasinovsky](https://github.com/yasinovsky)
 - [Yury Arlou](https://github.com/zablik)
 - [Jack Wall](https://github.com/j4k)
+- [Nikita Kostin](https://github.com/maxidon1)

@@ -1,13 +1,13 @@
 <?php
 
-namespace Yaseek\OAuth2\Client\Provider;
+namespace Luchki\OAuth2\Client\Provider;
 
 use League\OAuth2\Client\Provider\ResourceOwnerInterface;
 
 /**
  * @see     https://vk.com/dev/fields
  *
- * @package Yaseek\OAuth2\Client\Provider
+ * @package Luchki\OAuth2\Client\Provider
  */
 class VkontakteUser implements ResourceOwnerInterface
 {
