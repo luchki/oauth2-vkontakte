@@ -131,7 +131,7 @@ class Vkontakte extends AbstractProvider
                 if ($pkce_provider === null) {
                         $this->pkce_provider = new SessionPkceProvider();
                 } else {
-                        if ($pkce_provider instanceof PkceProviderInterface) {
+                        if (!$pkce_provider instanceof PkceProviderInterface) {
                                 throw new \LogicException(
                                         'The pkceProvider can be used with ' . PkceProviderInterface::class
                                 );

@@ -5,7 +5,7 @@ namespace Luchki\OAuth2\Client\Provider;
 
 class SessionPkceProvider implements PkceProviderInterface
 {
-        private $key;
+        protected $key;
 
         public function __construct(string $key = '__pkce') {
                 $this->key = $key;
